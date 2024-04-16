@@ -57,7 +57,7 @@ def main(args):
     try:
         # Récupérer les informations de connexion Elasticsearch depuis le fichier de configuration
         es_username = config.get('elasticsearch', 'username')
-        es_password = config.get('elasticsearch', 'password')
+        es_password = os.environ.get('ELASTICSEARCH_PASSWORD')
         es_host = config.get('elasticsearch', 'host')
         es_port = config.get('elasticsearch', 'port')
         es_scheme = config.get('elasticsearch', 'scheme')
